@@ -1,0 +1,12 @@
+#this is a personal enviroment path file
+#u can add env path you most usually use here
+#when add new envpath ,source ~/.bashrc
+export bin=/home/munger/bin/
+export shell=/home/munger/shell/
+export pj=/home/munger/project/
+export gif=/home/munger/project/gif/
+export test=/home/munger/project/test/
+
+export btog=/home/munger/project/nexus4/B2G/
+export gecko=/home/munger/project/nexus4/B2G/gecko/
+

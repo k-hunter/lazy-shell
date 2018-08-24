@@ -1,0 +1,8 @@
+#!/bin/bash
+
+pid=`ps -o pid -t tty7`
+pid=`echo $pid | cut -c4-`
+echo 'pid is' $pid
+kill $pid
+
+exit 5

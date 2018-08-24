@@ -1,0 +1,29 @@
+#!/bin/bash
+
+#Func_name=$1
+File=$2
+gifpath="/home/munger/project/gif/"
+
+####replace the path of Func_name '/' into '-'
+echo $1 > tmp.txt
+cat tmp.txt 
+Func_name=$(sed 's#/#-#g' tmp.txt) 
+echo "     |  "
+echo "     V  "
+echo $Func_name
+echo -e "-----------------------------------------------------------------\n"
+
+cflow -Tb$3 -d=1 -m=$Func_name  $File > $Func_name.txt
+#cflow -Tb$3 --omit-symbol-names $Func_name  $File > $Func_name.txt
+cat $Func_name.txt | tree2dotx > $Func_name.dot
+dot -Tgif $Func_name.dot -o $gifpath$Func_name.gif
+echo -e "if no such dir,run |mkdir -p ~/project/gif| first,in order to save your final gif \n"
+
+echo "--------------tmp files list below will be remove----------------"
+ls $Func_name* tmp.txt 
+rm $Func_name.txt $Func_name.dot tmp.txt  
+
+echo -e "\n-----------------the final generated gif in $gifpath:----------"
+ls $gifpath$Func_name*
+echo -e "functions gif paintting finished!\n\ncheck it in $gifpath or run |eog $gifpath$Func_name.gif| directely..."
+

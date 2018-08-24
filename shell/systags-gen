@@ -1,0 +1,20 @@
+#!/bin/bash
+
+#this is a file of generate ctags of system header in ~/.vim/systags 
+
+#avaliable
+echo "this a file of generate ctags of system header"
+#ctags -I __THROW --file-scope=yes --langmap=c:+.h --languages=c,c++ --links=yes --c-kinds=+p --fields=+S  -R -f ~/.vim/systags /usr/include /usr/local/include
+
+#cut version 
+ctags -I __THROW -I __attribute_pure__ -I __nonnull -I __attribute__ --file-scope=yes --langmap=c:+.h --languages=c,c++ --links=yes --c-kinds=+p --c++-kinds=+p --fields=+iaS --extra=+q  -f ~/.vim/systags /usr/include/* /usr/include/sys/* /usr/include/bits/*  /usr/include/netinet/* /usr/include/arpa/* /usr/include/mysql/*
+echo "tags gen in ~/.vim/systags"
+
+
+
+
+#warnings damn it!!!
+#ctags -I __THROW -I __attribute_pure__ -I __nonnull -I __attribute__ –file-scope=yes –langmap=c:+.h –languages=c,c++ –links=yes –c-kinds=+p –c++-kinds=+p –fields=+iaS –extra=+q  -f ~/.vim/systags /usr/include/* /usr/include/sys/* /usr/include/bits/*  /usr/include/netinet/* /usr/include/arpa/* /sdb1/development/ACE-5.8.0/include/* /sdb1/development/sqlite3/include/* /sdd1/oracle/11gR2_database_X64/product/11.2.0.1.0/db_1/rdbms/public/*
+
+
+
