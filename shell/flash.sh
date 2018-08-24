@@ -1,10 +1,12 @@
 #!/bin/bash
-path_to_save_img="/home/munger/project/img"
-shell_path="/home/munger/shell"
+youname = xxx
+youpwd = 123456
+path_to_save_img="/home/$youname/project/img"
+shell_path="/home/$youname/shell"
 function fastboot_flash() {
    
     echo "here we go to flash them! >>>>>>>>>>>>"
-    echo "123123" | sudo -S ls
+    echo $youpwd | sudo -S ls
     #sshpass -p 123123 sudo adb reboot bootloader
     sudo adb reboot bootloader
     echo ">>>>>>>"

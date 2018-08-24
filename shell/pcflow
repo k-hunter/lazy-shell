@@ -2,7 +2,7 @@
 
 #Func_name=$1
 File=$2
-gifpath="/home/munger/project/gif/"
+gifpath="/home/$yourname/project/gif/"
 
 ####replace the path of Func_name '/' into '-'
 echo $1 > tmp.txt
